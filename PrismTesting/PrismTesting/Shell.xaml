@@ -1,0 +1,14 @@
+﻿<Window x:Class="PrismTesting.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:prism="http://www.codeplex.com/prism"
+         Title="MainWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ContentControl Grid.Row="0" prism:RegionManager.RegionName="Menu"/>
+        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="Main"/>
+    </Grid>    
+</Window>

@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+    Response.Headers["X-UA-Compatible"] = "IE=10";
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angular-animate.min.js"></script>
+@*<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>*@
+<script src="~/Scripts/controllers/app.js"></script>
+<script src="~/Scripts/controllers/mainController.js"></script>
+<script src="~/Scripts/controllers/CRUDService.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My ASP.NET Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body ng-app="app">
+    <div class="row" ng-controller="mainController">
+        <div class="col-md-4">
+            <h2>{{title}}</h2>
+        </div>
+        <div class="col-md-4">
+            <coolcontrol title="Hello"></coolcontrol>
+        </div>
+        <div class="col-md-4">
+            <div class="btn btn-info" title="Add" ng-click="addSomething()">Press</div>
+        </div>
+        
+        <my-button title="New Button" clicker="addSomething"></my-button>
+
+        <input type="button" title="Post" ng-click="testPost()" />
+    </div>
+    
+    <my-div><div>Hello</div></my-div>
+    
+
+    <table ng-controller="tableController" class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr class="h4">
+                <td ng-repeat="property in headers" ng-click="sort(property)">
+                    {{property.title}}
+                    <span ng-show="property.sortDirection === 1" class="glyphicon glyphicon-chevron-down"></span>
+                    <span ng-show="property.sortDirection === -1" class="glyphicon glyphicon-chevron-up"></span>
+                </td>
+            </tr>
+        </thead>
+        <tr ng-repeat="row in data">
+            <td ng-repeat="value in row">{{value}}</td>
+        </tr>
+
+    </table>
+</body>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/bootstrap")
+
+
+
+</html>
+
