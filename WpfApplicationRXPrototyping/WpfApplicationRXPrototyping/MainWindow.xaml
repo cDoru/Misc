@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfApplicationRXPrototyping.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:System.Windows.Converters;assembly=WindowsBase"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Button Click="ButtonBase_OnClick">
+                Start</Button>
+            <Button
+                
+                IsEnabled="{Binding Path=ButtonEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">  
+                
+                Test
+            
+            </Button>
+
+            <Button Height="20" Background="Green">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Setters>
+                            <Setter Property="Content" Value="{Binding Path=ButtonEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></Setter>
+                        </Style.Setters>
+
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Path=ButtonEnabled, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Value="False">
+                                <DataTrigger.Setters>
+                                    <Setter Property="Button.Background" Value="Red"></Setter>
+                                </DataTrigger.Setters>
+                            </DataTrigger>
+                            <Trigger Property="Content" Value="False">
+                                <Trigger.Setters>
+                                    <Setter Property="Background" Value="Red"></Setter>
+                                </Trigger.Setters>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Path=Collection, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}"></TextBlock>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Window>
