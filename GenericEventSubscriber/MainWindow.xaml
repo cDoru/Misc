@@ -1,0 +1,13 @@
+﻿<Window x:Class="GenericEventSubscriber.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button Content="Subscribe" Click="Subscribe_OnClick"></Button>
+        <Button Content="Unsubscribe" Click="Unsubscribe_OnClick"></Button>
+        <Button Content="Event" Click="Event_OnClick"></Button>
+        <TextBox x:Name="TextBox"></TextBox>
+        <TextBlock x:Name="Text"></TextBlock>
+        
+    </StackPanel>
+</Window>
