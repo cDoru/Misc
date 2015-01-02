@@ -1,0 +1,22 @@
+var add = function(n1, n2) { return n1 + n2; }
+var substract = function(n1, n2) { return n1 - n2; }
+
+
+var curry = function(func, value)
+{
+    return function()
+    {
+        var array = Array.prototype.slice.call(arguments);
+        array.push(value);
+        return func.apply(undefined, array);   
+    }
+};
+
+var add5 = curry(add, 5);
+var subtract5 = curry(substract, 5);
+
+var result = add5(3);
+var result = subtract5(3);
+
+
+$('#output1').html("Result: " + result);
