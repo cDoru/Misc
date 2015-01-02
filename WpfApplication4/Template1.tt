@@ -1,0 +1,16 @@
+﻿<#@ template language="C#" #>
+<#@ parameter name="TestParam" type="System.String" #>
+<#@ parameter name="List" type="System.Collections.Generic.IEnumerable<string>" #>
+<html>
+<body>
+<h1>Some Header</h2>
+Parameter: <#= TestParam #>
+<table>
+    <# foreach (var str in List)
+       { #>
+         <tr><td>Test name <#= str #> </td>
+             <td>Test value <#= str #> </td> </tr>
+    <# } #>
+ </table>
+</body>
+</html>
