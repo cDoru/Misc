@@ -54,9 +54,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ScreenshotProviderTest.cs" />
-    <Compile Include="ScreenshotTestTests.cs" />
-    <Compile Include="ScreenshotTestRunnerTests.cs" />
+    <Compile Include="UnitTests\ScreenshotProviderTest.cs" />
+    <Compile Include="UnitTests\ScreenshotTestTests.cs" />
+    <Compile Include="UnitTests\ScreenshotTestRunnerTests.cs" />
     <Compile Include="Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
