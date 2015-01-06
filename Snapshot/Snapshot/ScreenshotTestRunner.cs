@@ -1,22 +1,23 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Snapshot
 {
     public class ScreenshotTestRunner
     {
-        private readonly IEnumerable<IScreenshotTest> _tests;
+        private readonly IEnumerable<IScreenshotDefinition> _tests;
+        private readonly IScreenshotTestEngine _screenshotTestEngine;
 
-        public ScreenshotTestRunner(IEnumerable<IScreenshotTest> tests )
+        public ScreenshotTestRunner(IScreenshotTestEngine screenshotTestEngine, IEnumerable<IScreenshotDefinition> tests)
         {
+            _screenshotTestEngine = screenshotTestEngine;
             _tests = tests;
         }
 
-        public void Run()
+        public IEnumerable<IScreenshotTestResult> Run()
         {
-            foreach (var test in _tests)
-            {
-                test.Run();
-            }
+            return _tests.Select(test => _screenshotTestEngine.Run(test))
+                .ToList();
         }
     }
 }

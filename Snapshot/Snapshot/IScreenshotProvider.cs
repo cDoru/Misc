@@ -2,6 +2,6 @@
 {
     public interface IScreenshotProvider
     {
-        void GetScreenshot(string url, string filePath);
+        void SaveScreenshot(string url, string filePath);
     }
 }

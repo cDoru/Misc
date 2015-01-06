@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 
-namespace Snapshot.Tests.UnitTests
+namespace Snapshot.Tests.IntregrationTests
 {
     public class ScreenshotProviderTest
     {
@@ -21,7 +21,7 @@ namespace Snapshot.Tests.UnitTests
                     File.Delete(filePath);
                 }
 
-                sut.GetScreenshot(url, filePath);
+                sut.SaveScreenshot(url, filePath);
             }
 
             var bitmapComparer = new BitmapComparer();
@@ -45,7 +45,7 @@ namespace Snapshot.Tests.UnitTests
             using (var driver = new ChromeDriver(@"Drivers/"))
             {
                 var sut = new ScreenshotProvider(driver);
-                sut.GetScreenshot(url, filePath);
+                sut.SaveScreenshot(url, filePath);
             }
 
             var bitmapComparer = new BitmapComparer();

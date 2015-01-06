@@ -49,12 +49,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BitmapComparer.cs" />
+    <Compile Include="FilePathProvider.cs" />
     <Compile Include="IBitmapComparer.cs" />
+    <Compile Include="IFilePathProvider.cs" />
     <Compile Include="IScreenshotProvider.cs" />
-    <Compile Include="IScreenshotTest.cs" />
+    <Compile Include="IScreenshotDefinition.cs" />
+    <Compile Include="IScreenshotTestEngine.cs" />
+    <Compile Include="IScreenshotTestResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenshotProvider.cs" />
-    <Compile Include="ScreenshotTest.cs" />
+    <Compile Include="ScreenshotRunner.cs" />
+    <Compile Include="ScreenshotDefinition.cs" />
+    <Compile Include="ScreenshotTestEngine.cs" />
+    <Compile Include="ScreenshotTestResult.cs" />
     <Compile Include="ScreenshotTestRunner.cs" />
   </ItemGroup>
   <ItemGroup>

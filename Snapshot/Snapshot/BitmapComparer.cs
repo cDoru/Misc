@@ -17,7 +17,7 @@ namespace Snapshot
             return result;
         }
 
-        private bool AreSame(Bitmap bmp1, Bitmap bmp2)
+        private static bool AreSame(Bitmap bmp1, Bitmap bmp2)
         {
             return AreSameSize(bmp1, bmp2) &&
                    ArePixelsTheSame(bmp1, bmp2);

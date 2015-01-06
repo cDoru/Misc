@@ -14,7 +14,7 @@ namespace Snapshot
             _remoteWebDriver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(15));
         }
 
-        public void GetScreenshot(string url, string filePath)
+        public void SaveScreenshot(string url, string filePath)
         {
             _remoteWebDriver.Navigate().GoToUrl(url);
             var s = _remoteWebDriver.GetScreenshot();
